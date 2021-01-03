@@ -8,49 +8,49 @@
 <body>
     <script>
         let compScore = 0;
-let userScore = 0;
-let winner = 3;
+        let userScore = 0;
+        let winner = 3;
 
-function computerPlay() {
-    let compChoice = ["ROCK", "PAPER", "SCISSORS"];
-    let compMove = compChoice[Math.floor(Math.random()*compChoice.length)];
-    return compMove;
-}
+        function computerPlay() {
+            let compChoice = ["ROCK", "PAPER", "SCISSORS"];
+            let compMove = compChoice[Math.floor(Math.random()*compChoice.length)];
+            return compMove;
+        }
 
-function userPlay() {
-    let userChoice = prompt("Make Your Move");
-    let userMove = userChoice.toUpperCase();
-    return userMove;
-}
+        function userPlay() {
+            let userChoice = prompt("Make Your Move");
+            let userMove = userChoice.toUpperCase();
+            return userMove;
+        }
 
-function game(computer, user) {
-            switch (true) {
-            case computer == "ROCK" && user == "SCISSORS" || computer == "PAPER" && user == "ROCK" || computer == "SCISSORS" && user == "PAPER":
-                compScore = compScore + 1;
-                alert(`User: ${user}\nComputer: ${computer}\nComputer Wins The Round!\nComputer: ${compScore} vs User: ${userScore}\n`);
-                break;
-            case user == "ROCK" && computer == "SCISSORS" || user == "PAPER" && computer == "ROCK" || user == "SCISSORS" && computer == "PAPER":
-                userScore = userScore + 1;
-                alert(`User: ${user}\nComputer: ${computer}\nUser Wins The Round!\nComputer: ${compScore} vs User: ${userScore}\n`);
-                break;
-            case user === computer:
-                alert(`User: ${user}\nComputer: ${computer}\nIt's A Draw\nComputer: ${compScore} vs User: ${userScore}\n`)
-                break;
-            }
-}
+        function game(computer, user) {
+                    switch (true) {
+                    case computer == "ROCK" && user == "SCISSORS" || computer == "PAPER" && user == "ROCK" || computer == "SCISSORS" && user == "PAPER":
+                        compScore = compScore + 1;
+                        alert(`User: ${user}\nComputer: ${computer}\nComputer Wins The Round!\nComputer: ${compScore} vs User: ${userScore}\n`);
+                        break;
+                    case user == "ROCK" && computer == "SCISSORS" || user == "PAPER" && computer == "ROCK" || user == "SCISSORS" && computer == "PAPER":
+                        userScore = userScore + 1;
+                        alert(`User: ${user}\nComputer: ${computer}\nUser Wins The Round!\nComputer: ${compScore} vs User: ${userScore}\n`);
+                        break;
+                    case user === computer:
+                        alert(`User: ${user}\nComputer: ${computer}\nIt's A Draw\nComputer: ${compScore} vs User: ${userScore}\n`)
+                        break;
+                    }
+        }
 
-while (compScore != winner && userScore != winner) {
-    const user = userPlay()
-    const computer = computerPlay();
-    
-    game(computer, user)
-} 
+        while (compScore != winner && userScore != winner) {
+            const user = userPlay()
+            const computer = computerPlay();
+            
+            game(computer, user)
+        } 
 
-if (compScore > userScore) {
-    alert("Computer Wins The Game");
-} else if (compScore < userScore) {
-    alert("You Win The Game");
-}
+        if (compScore > userScore) {
+            alert("Computer Wins The Game");
+        } else if (compScore < userScore) {
+            alert("You Win The Game");
+        }
     </script>
 </body>
 </html>
