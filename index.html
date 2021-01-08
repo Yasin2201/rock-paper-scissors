@@ -7,8 +7,8 @@
 </head>
 <body>
     <script>
-        let compScore = 0;
         let userScore = 0;
+        let compScore = 0;
         let winner = 3;
 
         function computerPlay() {
@@ -24,19 +24,15 @@
         }
 
         function game(computer, user) {
-                    switch (true) {
-                    case computer == "ROCK" && user == "SCISSORS" || computer == "PAPER" && user == "ROCK" || computer == "SCISSORS" && user == "PAPER":
-                        compScore = compScore + 1;
-                        alert(`User: ${user}\nComputer: ${computer}\nComputer Wins The Round!\nComputer: ${compScore} vs User: ${userScore}\n`);
-                        break;
-                    case user == "ROCK" && computer == "SCISSORS" || user == "PAPER" && computer == "ROCK" || user == "SCISSORS" && computer == "PAPER":
-                        userScore = userScore + 1;
-                        alert(`User: ${user}\nComputer: ${computer}\nUser Wins The Round!\nComputer: ${compScore} vs User: ${userScore}\n`);
-                        break;
-                    case user === computer:
-                        alert(`User: ${user}\nComputer: ${computer}\nIt's A Draw\nComputer: ${compScore} vs User: ${userScore}\n`)
-                        break;
-                    }
+            if (computer == "ROCK" && user == "SCISSORS" || computer == "PAPER" && user == "ROCK" || computer == "SCISSORS" && user == "PAPER") {
+                compScore = compScore + 1;
+                alert(`User: ${user}\nComputer: ${computer}\nComputer Wins The Round!\nComputer: ${compScore} vs User: ${userScore}\n`);
+            }   else if (computer == user) {
+                alert(`User: ${user}\nComputer: ${computer}\nIt's A Draw\nComputer: ${compScore} vs User: ${userScore}\n`)
+            }   else {
+                userScore = userScore + 1;
+                alert(`User: ${user}\nComputer: ${computer}\nUser Wins The Round!\nComputer: ${compScore} vs User: ${userScore}\n`);
+            }
         }
 
         while (compScore != winner && userScore != winner) {
@@ -44,7 +40,7 @@
             const computer = computerPlay();
             
             game(computer, user)
-        } 
+        }
 
         if (compScore > userScore) {
             alert("Computer Wins The Game");
