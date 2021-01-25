@@ -1,0 +1,190 @@
+html {
+    height: 100%;
+    min-height: 100%;
+    background-color: #2B3E4E;
+ }
+ 
+ /* Set title design and positions */
+
+ #header {
+     display: grid;
+     grid-template-columns: 1fr 430px 1fr;
+     grid-template-rows: 80px;
+     grid-template-areas: ". title .";
+     font-family: 'Montserrat', sans-serif;
+     font-size: 20px;
+     color: rgb(238, 238, 238);
+ }
+
+ #title {
+    grid-area: title;
+    justify-self: center;
+    align-self: center;
+}
+
+ /* Set button positioning */
+
+#container {
+    display: grid;
+    grid-template-columns: 1fr 150px 150px 150px 1fr;
+    grid-template-rows: 80px;
+    grid-template-areas: ". rock paper scissors .";
+    font-size: 20px;
+}
+
+#rock {
+    grid-area: rock;
+    justify-self: center;
+    align-self: center;
+}
+
+#paper {
+    grid-area: paper;
+    justify-self: center;
+    align-self: center;
+}
+
+#scissors {
+    grid-area: scissors;
+    justify-self: center;
+    align-self: center;
+}
+
+ /* Set button design */
+
+#rock {
+    background-color: #e67e22;
+    border:solid 1px #f39c12;
+    border-radius:5px;
+    color: rgb(238, 238, 238);
+    padding: 15px 44px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    margin: 4px 2px;
+    outline: 0;
+    }
+
+#rock:hover {
+    box-shadow: 0 0 5px rgb(128, 126, 126);
+}
+
+#rock:active {
+    background-color: #e67e22;
+    box-shadow: 0 0 5px rgb(128, 126, 126);
+    transform: translateY(1px);
+}
+
+#rock:disabled,
+#rock[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  box-shadow: none;
+}
+
+#paper {
+    background-color: #e67e22;
+    border:solid 1px #f39c12;
+    border-radius:5px;
+    color: rgb(238, 238, 238);
+    padding: 15px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    margin: 4px 2px;
+    outline: 0;
+}
+
+#paper:hover {
+    box-shadow: 0 0 5px rgb(128, 126, 126);
+}
+
+#paper:active {
+    background-color: #e67e22;
+    box-shadow: 0 0 5px rgb(128, 126, 126);
+    transform: translateY(1px);
+  }
+
+#scissors:disabled,
+#scissors[disabled]{
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+    box-shadow: none;
+}
+
+#scissors {
+    background-color: #e67e22;
+    border:solid 1px #f39c12;
+    border-radius:5px;
+    color: rgb(238, 238, 238);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    margin: 4px 2px;
+    outline: 0;
+    }
+
+#scissors:hover {
+    box-shadow: 0 0 5px rgb(128, 126, 126);
+}
+
+#scissors:active {
+    background-color: #e67e22;
+    box-shadow: 0 0 5px rgb(128, 126, 126);
+    transform: translateY(1px);
+  }
+
+#paper:disabled,
+#paper[disabled]{
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+    box-shadow: none;
+}
+ 
+/* Positioning and design of results */
+
+#outcome {
+    display: grid;
+    grid-template-columns: 1fr 300px 1fr;
+    grid-template-rows: 55px 50px;
+    grid-template-areas: 
+    ". rnd-play ."
+    ". score .";
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    color: rgb(238, 238, 238);
+}
+
+.rnd-play {
+    grid-area: rnd-play;
+    justify-self: center;
+    align-self: flex-start;
+}
+
+.score {
+    grid-area: rnd-play;
+    justify-self: center;
+    align-self: flex-end;
+}
+
+.winner {
+    grid-area: rnd-play;
+    justify-self: center;
+    align-self: flex-start;
+}
+
+.rnd-outcome {
+    grid-area: score;
+    justify-self: center;
+    align-self: center;
+}
