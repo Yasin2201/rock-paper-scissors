@@ -9,6 +9,13 @@ function endGame() {
     });
 }
 
+//function allows for page refresh with an onscreen button
+function replay() {
+    reload.addEventListener('click', () => {
+        location.reload();
+    });
+}
+
 //function uses the button.id as users choice
 function userPlay() {
     let userChoice = document.querySelectorAll('button')
@@ -33,20 +40,23 @@ function game(user) {
     if (computer == "rock" && user == "scissors" || computer == "paper" && user == "rock" || computer == "scissors" && user == "paper") {
         compScore = compScore + 1;
         content.textContent = `User: ${user} Computer: ${computer}`;
-        content2.textContent = `User: ${userScore} Computer: ${compScore}`
+        content2.textContent = `User: ${userScore}\r\n`
+        content2.textContent += `Computer: ${compScore}`
         content3.textContent = `You Lose the Round`
     } 
     
     else if (computer == user) {
         content.textContent = `User: ${user} Computer: ${computer}`;
-        content2.textContent = `User: ${userScore} Computer: ${compScore}`
+        content2.textContent = `User: ${userScore}\r\n`
+        content2.textContent += `Computer: ${compScore}`
         content3.textContent = `It's a Draw Round`
     }   
     
     else {
         userScore = userScore + 1;
         content.textContent = `User: ${user} Computer: ${computer}`;
-        content2.textContent = `User: ${userScore} Computer: ${compScore}`
+        content2.textContent = `User: ${userScore}\r\n`
+        content2.textContent += `Computer: ${compScore}`
         content3.textContent = `You Win the Round`
     }
 }
@@ -57,23 +67,32 @@ buttons.forEach((button) => {
         game(button.id);
             if (compScore == 5) {
             content.textContent = "";
-            content2.textContent = `User: ${userScore} Computer: ${compScore}`
+            content2.textContent = `User: ${userScore}\r\n`
+            content2.textContent += `Computer: ${compScore}`
             content3.textContent = "";
             content4.textContent = "Computer Wins The Game";
             endGame()
+            replay()
+            container.appendChild(reload);
         } 
             else if (userScore == 5) {
             content.textContent = "";
-            content2.textContent = `User: ${userScore} Computer: ${compScore}`
+            content2.textContent = `User: ${userScore}\r\n`
+            content2.textContent += `Computer: ${compScore}`
             content3.textContent = "";
             content4.textContent = "You Win The Game";
             endGame()
+            replay()
+            container.appendChild(reload);
         }
     });
 });
 
 
 const container = document.querySelector('#outcome');
+
+const reload = document.createElement('button');
+reload.classList.add('replay')
 
 const content = document.createElement('p1');
 content.classList.add('rnd-play');

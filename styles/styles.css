@@ -156,13 +156,16 @@ html {
 #outcome {
     display: grid;
     grid-template-columns: 1fr 300px 1fr;
-    grid-template-rows: 55px 50px;
+    grid-template-rows: 75px 50px 50px;
     grid-template-areas: 
     ". rnd-play ."
-    ". score .";
+    ". score ."
+    ". replay .";
     font-family: 'Montserrat', sans-serif;
     font-size: 17px;
+    text-transform: capitalize;
     color: rgb(238, 238, 238);
+    white-space: pre-line;
 }
 
 .rnd-play {
@@ -181,6 +184,7 @@ html {
     grid-area: rnd-play;
     justify-self: center;
     align-self: flex-start;
+
 }
 
 .rnd-outcome {
@@ -188,3 +192,36 @@ html {
     justify-self: center;
     align-self: center;
 }
+
+.replay {
+    grid-area: replay;
+    justify-self:center;
+    align-self: center;
+    background: url("images/reload.png") no-repeat;
+    background-size: 70px;
+    background-position: center;
+    background-color: rgba(18, 112, 141, 0.363);
+    border:solid 2px rgba(18, 112, 141, 0.459);
+    border-radius: 5px;
+    color: rgb(238, 238, 238);
+    padding: 40px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    margin: 4px 2px;
+    outline: 0;
+
+}
+
+.replay:hover {
+    box-shadow: 0 0 5px rgb(128, 126, 126);
+    background-size: 72px;
+    padding: 42px 42px;
+}
+
+.replay:active {
+    box-shadow: 0 0 5px rgb(128, 126, 126);
+    transform: translateY(1px);
+  }
